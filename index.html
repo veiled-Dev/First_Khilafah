@@ -1,90 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>School Website</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First Khilafah School - Welcome</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">Logo</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#management">Management</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">The First Khilafah School</div>
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="menu-toggle">Menu</button>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Main Headline for School Website</h1>
-    <p>Introductory text goes here</p>
-    <button>Apply Now</button>
-  </section>
+    <main>
+        <section class="hero">
+            <h1>Welcome to The First Khilafah School</h1>
+            <p>Fostering knowledge and growth since 1980. Knowledge is Incumbent.</p>
+            <a href="admissions.html" class="cta-button">Apply Now</a>
+        </section>
 
-  <!-- Activities Section -->
-  <section class="activities">
-    <h2>Our Activities</h2>
-    <div class="activity-cards">
-      <div class="card">Activity 1</div>
-      <div class="card">Activity 2</div>
-      <div class="card">Activity 3</div>
-    </div>
-  </section>
+        <section class="announcements">
+            <h2 id="news-heading">Latest News & Announcements</h2>
+            <div id="news-container">
+                <p>Loading news...</p> 
+            </div>
+        </section>
+    </main>
 
-  <!-- Blog Section -->
-  <section class="blog" id="blog">
-    <h2>Latest Blog</h2>
-    <div class="blog-cards">
-      <div class="card">Blog Post 1</div>
-      <div class="card">Blog Post 2</div>
-      <div class="card">Blog Post 3</div>
-    </div>
-  </section>
+    <footer>
+        <p>&copy; 2025 The First Khilafah School. All rights reserved.</p>
+    </footer>
 
-  <!-- Team Section -->
-  <section class="team">
-    <h2>Meet Our Team</h2>
-    <div class="team-cards">
-      <div class="card">Member 1</div>
-      <div class="card">Member 2</div>
-      <div class="card">Member 3</div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class="gallery" id="gallery">
-    <h2>Our Gallery</h2>
-    <div class="gallery-cards">
-      <div class="card">Image 1</div>
-      <div class="card">Image 2</div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter">
-    <h3>Subscribe to Our Newsletter</h3>
-    <form>
-      <input type="email" placeholder="Enter your email" />
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">Logo</div>
-      <div class="footer-section">Links</div>
-      <div class="footer-section">Contact Info</div>
-    </div>
-  </footer>
+    <script src="script.js"></script>
 </body>
 </html>
-
