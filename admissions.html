@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions Application - The First Khilafah School</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="The First Khilafah School Logo" class="header-logo">
+            </a>
+        </div>
+        <nav id="main-nav">
+            <a href="#about-us-section">About Us</a> 
+            <a href="academics.html">Academics</a>
+            <a href="#news-heading">News</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="menu-toggle">Menu</button>
+    </header>
+
+    <main class="admissions-main">
+        <div class="admissions-container">
+            <h1 class="page-title">Admissions Application</h1>
+            <p class="tagline">Complete the form below to begin the application process.</p>
+
+            <form action="YOUR_FORM_SERVICE_ENDPOINT" method="POST" class="application-form">
+                
+                <fieldset>
+                    <legend>Student Information</legend>
+                    <div class="form-grid">
+                        <input type="text" name="student_first_name" placeholder="First Name *" required>
+                        <input type="text" name="student_last_name" placeholder="Last Name *" required>
+                        
+                        <input type="date" name="student_dob" placeholder="Date of Birth *" required>
+                        
+                        <select name="grade_applying_for" required>
+                            <option value="" disabled selected>Applying for Grade *</option>
+                            <option value="KG1">KG 1</option>
+                            <option value="KG2">KG 2</option>
+                            <option value="Grade1">Grade 1</option>
+                            <option value="Grade2">Grade 2</option>
+                            <option value="Grade3">Grade 3</option>
+                            </select>
+                        
+                        <input type="text" name="previous_school" placeholder="Previous School Name (if any)">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Parent/Guardian Contact</legend>
+                    <div class="form-grid">
+                        <input type="text" name="parent_name" placeholder="Full Name *" required>
+                        <input type="email" name="parent_email" placeholder="Email Address *" required>
+                        
+                        <input type="tel" name="parent_phone" placeholder="Phone Number *" required>
+                        <input type="text" name="parent_relationship" placeholder="Relationship to Student *" required>
+                    </div>
+                    
+                    <input type="text" name="address" placeholder="Residential Address *" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <textarea name="questions" rows="4" placeholder="Please list any specific academic or medical notes we should be aware of."></textarea>
+                </fieldset>
+                
+                <button type="submit" class="submit-button apply-btn">SUBMIT APPLICATION</button>
+                <p class="small-text">Submission of this form does not guarantee acceptance. The admissions team will contact you shortly to schedule an interview.</p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The First Khilafah School. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

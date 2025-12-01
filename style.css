@@ -251,3 +251,93 @@ footer {
         height: 30px;
     }
 }
+/* ==================================== */
+/* ADMISSIONS APPLICATION STYLES */
+/* ==================================== */
+
+.admissions-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.application-form fieldset {
+    border: 1px solid #ccc;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.application-form legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1A5328; /* Deep Green */
+    padding: 0 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="tel"],
+.application-form input[type="date"],
+.application-form select,
+.application-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    margin-bottom: 0; /* Remove default margin for grid compatibility */
+}
+
+/* Specific styling to ensure single-column elements span the full width */
+.application-form input[type="text"][name="address"] {
+    grid-column: 1 / -1; /* Spans all columns in the grid */
+    margin-top: 15px;
+}
+
+.application-form textarea {
+    width: 100%;
+    margin-top: 15px;
+    grid-column: 1 / -1;
+    resize: vertical;
+}
+
+.apply-btn {
+    background-color: #1A5328; /* Deep Green */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.apply-btn:hover {
+    background-color: #0d3817; 
+}
+
+.small-text {
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Ensure date input looks consistent */
+input[type="date"] {
+    color: #333; /* Default text color */
+}
