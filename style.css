@@ -24,7 +24,7 @@ a:hover {
     color: #0d3817; /* Darker green on hover */
 }
 
-h1, h2, h3 {
+h1, h2, h3, legend {
     color: #1A5328; /* Green headings */
 }
 
@@ -38,6 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Needed for positioning mobile menu */
 }
 
 .header-logo {
@@ -48,7 +49,7 @@ header {
 
 /* Desktop Navigation */
 nav a {
-    color: #1A5328; /* Green links on white background */
+    color: #1A5328; 
     text-decoration: none;
     margin-left: 20px;
     padding: 5px 10px;
@@ -57,7 +58,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #D1C752; /* Muted Yellow/Gold Accent on hover */
+    background-color: #D1C752; /* Gold Accent on hover */
     color: #1A5328;
     border-radius: 5px;
 }
@@ -84,7 +85,6 @@ main {
 
 /* Hero Section */
 .hero {
-    /* Ensure you have this image in your images/ folder */
     background: url('images/school-exterior.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
@@ -94,19 +94,19 @@ main {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.5); 
     background-blend-mode: darken;
 }
 
 .hero h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
-    color: white; /* Keep text white on dark background */
+    color: white;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #D1C752; /* Muted Yellow/Gold (Accent) */
+    background-color: #D1C752; 
     color: #1A5328; 
     padding: 10px 20px;
     text-decoration: none;
@@ -129,7 +129,7 @@ main {
     margin-bottom: 15px;
 }
 
-/* Announcements & News Items */
+/* Announcements & News Items (CMS Content) */
 #news-container {
     margin-top: 15px;
 }
@@ -198,7 +198,7 @@ footer {
 .tour-btn { background-color: #398e4f; }
 .submit-button { background-color: #1A5328; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold; width: 100%; }
 
-/* Input/Form styling */
+/* Contact Form Inputs */
 .contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form select, .contact-form textarea {
     width: 100%; padding: 10px 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 1em;
 }
@@ -207,54 +207,8 @@ footer {
 
 
 /* ==================================== */
-/* 6. RESPONSIVENESS (Mobile Styles) */
+/* 6. ADMISSIONS PAGE STYLES */
 /* ==================================== */
-
-@media (max-width: 768px) {
-    /* Mobile Menu Display */
-    #main-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: #fcfcfc; 
-        text-align: center;
-        padding-bottom: 10px;
-        border-top: 1px solid #eee;
-    }
-    #main-nav.active { display: flex; }
-    #main-nav a { margin: 10px 0; padding: 10px; border-bottom: 1px solid #eee; color: #1A5328; }
-    
-    /* Mobile State: SHOW the Menu button */
-    #menu-toggle { 
-        display: block; 
-        border: 1px solid #1A5328; 
-        color: #1A5328; 
-    }
-
-    /* Contact Page Mobile Stack */
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* WhatsApp button adjustment */
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
-    .whatsapp-icon {
-        width: 30px;
-        height: 30px;
-    }
-}
-/* ==================================== */
-/* ADMISSIONS APPLICATION STYLES */
-/* ==================================== */
-
 .admissions-container {
     max-width: 900px;
     margin: 40px auto;
@@ -269,13 +223,6 @@ footer {
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 6px;
-}
-
-.application-form legend {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #1A5328; /* Deep Green */
-    padding: 0 10px;
 }
 
 .form-grid {
@@ -296,12 +243,11 @@ footer {
     border-radius: 5px;
     box-sizing: border-box; 
     font-size: 1em;
-    margin-bottom: 0; /* Remove default margin for grid compatibility */
+    margin-bottom: 0;
 }
 
-/* Specific styling to ensure single-column elements span the full width */
-.application-form input[type="text"][name="address"] {
-    grid-column: 1 / -1; /* Spans all columns in the grid */
+.application-form input[name="address"] {
+    grid-column: 1 / -1; 
     margin-top: 15px;
 }
 
@@ -313,7 +259,7 @@ footer {
 }
 
 .apply-btn {
-    background-color: #1A5328; /* Deep Green */
+    background-color: #1A5328; 
     color: white;
     padding: 15px 30px;
     border: none;
@@ -337,7 +283,62 @@ footer {
     margin-top: 15px;
 }
 
-/* Ensure date input looks consistent */
-input[type="date"] {
-    color: #333; /* Default text color */
+/* ==================================== */
+/* 7. RESPONSIVENESS (Mobile Styles) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    /* Mobile Menu Display */
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        background: #FFFFFF; /* White background fix for readability */
+        text-align: center;
+        padding-bottom: 10px;
+        border-top: 1px solid #eee;
+        z-index: 999; /* Ensure it overlays content */
+    }
+    #main-nav.active { display: flex; }
+    
+    /* Mobile State: SHOW the Menu button & set background */
+    #menu-toggle { 
+        display: block; 
+        background-color: #FFFFFF;
+        border: 1px solid #1A5328; 
+        color: #1A5328; 
+    }
+
+    #main-nav a { 
+        margin: 10px 0; 
+        padding: 10px; 
+        border-bottom: 1px solid #eee; 
+        color: #1A5328; 
+        font-weight: bold;
+    }
+
+    /* Contact Page Mobile Stack */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Admissions Form Stack */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* WhatsApp button adjustment */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
