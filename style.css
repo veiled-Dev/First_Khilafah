@@ -164,3 +164,19 @@ footer {
     color: red;
     font-weight: bold;
 }
+/* Styling for the new Logo Image */
+.header-logo {
+    /* Set a fixed height for the logo to keep the header bar clean */
+    height: 50px; 
+    /* The width will scale automatically to maintain aspect ratio */
+    width: auto; 
+    /* Ensures the logo is crisp */
+    vertical-align: middle; 
+}
+
+/* You may want to remove the old text styling if it conflicts */
+.logo {
+    /* Ensure the container itself doesn't have restrictive styles */
+    font-size: 1.5em; /* Remove this line if it makes the image too big */
+    font-weight: bold; /* Remove this line */
+}
