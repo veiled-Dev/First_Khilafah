@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The First Khilafah School - Welcome</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <header>
         <div class="logo">
-    <a href="index.html">
-        <img src="images/khilafah.jpg" alt="The First Khilafah School Logo" class="header-logo">
-    </a>
-</div>
+            <a href="index.html">
+                <img src="logo.jpg" alt="The First Khilafah School Logo" class="header-logo">
+            </a>
+        </div>
+        
         <nav id="main-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
+            <a href="#about-us-section">About Us</a> 
             <a href="academics.html">Academics</a>
+            <a href="#news-heading">News</a>
             <a href="contact.html">Contact</a>
         </nav>
+        
         <button id="menu-toggle">Menu</button>
     </header>
 
@@ -29,7 +31,17 @@
             <a href="admissions.html" class="cta-button">Apply Now</a>
         </section>
 
-        <section class="announcements">
+        <section id="about-us-section" class="content-section">
+            <h2>Our Mission</h2>
+            <p>The First Khilafah School is dedicated to nurturing young minds through a holistic curriculum that integrates Islamic principles with modern academic excellence. Our goal is to foster confident, knowledgeable, and morally upright leaders ready to serve their communities.</p>
+
+            <h3>Why Choose Us?</h3>
+            <p>We provide a supportive and immersive learning environment with highly qualified faculty, small class sizes, and a commitment to spiritual and intellectual growth. Our unique program ensures students excel academically while strengthening their core values.</p>
+
+            <a href="#" class="cta-button">Read Our Full History</a>
+        </section>
+
+        <section class="announcements content-section">
             <h2 id="news-heading">Latest News & Announcements</h2>
             <div id="news-container">
                 <p>Loading news...</p> 
@@ -40,6 +52,10 @@
     <footer>
         <p>&copy; 2025 The First Khilafah School. All rights reserved.</p>
     </footer>
+
+    <a href="YOUR_WHATSAPP_LINK_HERE" class="whatsapp-float" target="_blank">
+        <img src="whatsapp.png" alt="Chat with us on WhatsApp" class="whatsapp-icon">
+    </a>
 
     <script src="script.js"></script>
 </body>

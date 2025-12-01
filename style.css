@@ -1,4 +1,6 @@
-/* Basic Reset (No Change) */
+/* ==================================== */
+/* 1. GLOBAL & BASE STYLES */
+/* ==================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,42 +10,81 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333333; /* Dark Gray for main text */
+    color: #333333; 
     background-color: #f4f4f4;
 }
 
-/* Header & Navigation */
+a {
+    color: #1A5328; /* Primary Green for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0d3817; /* Darker green on hover */
+}
+
+h1, h2, h3 {
+    color: #1A5328; /* Green headings */
+}
+
+/* ==================================== */
+/* 2. HEADER & NAVIGATION */
+/* ==================================== */
 header {
-    background: #1A5328; /* Deep Green (Primary) */
-    color: white;
+    background: #FFFFFF; /* White Header */
+    border-bottom: 2px solid #1A5328; /* Green underline */
     padding: 1em 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
+.header-logo {
+    height: 50px; 
+    width: auto; 
+    vertical-align: middle; 
 }
 
+/* Desktop Navigation */
 nav a {
-    color: white;
+    color: #1A5328; /* Green links on white background */
     text-decoration: none;
     margin-left: 20px;
     padding: 5px 10px;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 nav a:hover {
-    /* Slightly darker green for hover effect */
-    background-color: #0d3817; 
+    background-color: #D1C752; /* Muted Yellow/Gold Accent on hover */
+    color: #1A5328;
     border-radius: 5px;
 }
 
-/* Hero Section (Keep background blend for contrast) */
+/* Default State: HIDE the Menu button on large screens */
+#menu-toggle {
+    display: none; 
+}
+
+
+/* ==================================== */
+/* 3. HOME PAGE SECTIONS & ELEMENTS */
+/* ==================================== */
+
+main {
+    padding-bottom: 50px;
+}
+
+.content-section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
 .hero {
-    /* You would need to add an appropriate photo here */
+    /* Ensure you have this image in your images/ folder */
     background: url('images/school-exterior.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
@@ -53,20 +94,20 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
     background-blend-mode: darken;
 }
 
 .hero h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
+    color: white; /* Keep text white on dark background */
 }
 
-/* Call-to-Action Button */
 .cta-button {
     display: inline-block;
     background-color: #D1C752; /* Muted Yellow/Gold (Accent) */
-    color: #1A5328; /* Green text on yellow button for high contrast */
+    color: #1A5328; 
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -76,83 +117,31 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    /* Darker Yellow/Gold for hover effect */
     background-color: #B5AB46; 
 }
 
-/* Announcements (No Change) */
-.announcements {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* About Us Styling for Index Page */
+#about-us-section {
+    background-color: #fcfcfc; 
+    border-top: 1px solid #eee;
+}
+#about-us-section p {
+    margin-bottom: 15px;
 }
 
-.announcements article {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
+/* Announcements & News Items */
+#news-container {
+    margin-top: 15px;
 }
-
-/* Footer */
-footer {
-    background: #1A5328; /* Deep Green (Primary) */
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 20px;
-}
-
-/* Hide mobile menu button on desktop (No Change) */
-#menu-toggle {
-    display: none;
-}
-
-/* Basic Mobile Responsiveness */
-@media (max-width: 768px) {
-    /* Hidden Nav Style (Update background color) */
-    #main-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: #1A5328; /* Deep Green */
-        text-align: center;
-        padding-bottom: 10px;
-    }
-
-    #main-nav.active {
-        display: flex;
-    }
-
-    #main-nav a {
-        margin: 10px 0;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Show mobile menu button (No Change) */
-    #menu-toggle {
-        display: block;
-        background: none;
-        border: 1px solid white;
-        color: white;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-}
-/* Styling for Dynamic News Content */
 
 .news-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
     padding: 15px 0;
     margin-bottom: 15px;
 }
 
 .news-image {
-    /* Ensures the image never exceeds the width of its container */
     max-width: 100%; 
-    /* Makes images look smooth and responsive */
     height: auto; 
     display: block;
     margin: 10px 0 15px 0;
@@ -160,23 +149,105 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.error-message {
-    color: red;
-    font-weight: bold;
-}
-/* Styling for the new Logo Image */
-.header-logo {
-    /* Set a fixed height for the logo to keep the header bar clean */
-    height: 50px; 
-    /* The width will scale automatically to maintain aspect ratio */
-    width: auto; 
-    /* Ensures the logo is crisp */
-    vertical-align: middle; 
+/* ==================================== */
+/* 4. FOOTER & FLOATING BUTTON */
+/* ==================================== */
+
+footer {
+    background: #1A5328; /* Deep Green Footer */
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 0;
 }
 
-/* You may want to remove the old text styling if it conflicts */
-.logo {
-    /* Ensure the container itself doesn't have restrictive styles */
-    font-size: 1.5em; /* Remove this line if it makes the image too big */
-    font-weight: bold; /* Remove this line */
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed; 
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; 
+    color: #fff;
+    border-radius: 50px; 
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-icon {
+    width: 40px; 
+    height: 40px;
+}
+
+/* ==================================== */
+/* 5. CONTACT PAGE STYLES */
+/* ==================================== */
+
+.contact-container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+.page-title { font-size: 3em; font-weight: 700; color: #1A5328; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
+.contact-info h3 { color: #1A5328; }
+
+.contact-form-box { background-color: #fcfcfc; padding: 30px; border: 1px solid #eee; border-radius: 8px; }
+
+.action-button { background-color: #1A5328; color: white; padding: 12px 25px; border-radius: 5px; font-weight: bold; font-size: 0.9em; text-align: center; }
+.tour-btn { background-color: #398e4f; }
+.submit-button { background-color: #1A5328; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; font-weight: bold; width: 100%; }
+
+/* Input/Form styling */
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form select, .contact-form textarea {
+    width: 100%; padding: 10px 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 1em;
+}
+.form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+.form-row input { flex-grow: 1; margin-bottom: 0; }
+
+
+/* ==================================== */
+/* 6. RESPONSIVENESS (Mobile Styles) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    /* Mobile Menu Display */
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #fcfcfc; 
+        text-align: center;
+        padding-bottom: 10px;
+        border-top: 1px solid #eee;
+    }
+    #main-nav.active { display: flex; }
+    #main-nav a { margin: 10px 0; padding: 10px; border-bottom: 1px solid #eee; color: #1A5328; }
+    
+    /* Mobile State: SHOW the Menu button */
+    #menu-toggle { 
+        display: block; 
+        border: 1px solid #1A5328; 
+        color: #1A5328; 
+    }
+
+    /* Contact Page Mobile Stack */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* WhatsApp button adjustment */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
