@@ -342,3 +342,22 @@ footer {
         height: 30px;
     }
 }
+
+.footer-credit {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+    padding: 20px 0;
+}
+
+.dev-link {
+    color: #25D366; /* This is the official WhatsApp Green color! */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dev-link:hover {
+    color: #128C7E; /* Darker green on hover */
+    text-decoration: underline;
+}
