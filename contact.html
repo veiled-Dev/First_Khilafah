@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact The First Khilafah School - Get in touch with us for admissions, tours, and inquiries.">
     <title>Contact Us - The First Khilafah School</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
@@ -15,41 +16,42 @@
         </div>
         <nav id="main-nav">
             <a href="index.html">Home</a>
-            <a href="academics.html">Academics</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
         </nav>
-        <button id="menu-toggle">Menu</button>
+        <button id="menu-toggle" aria-label="Toggle navigation menu">Menu</button>
     </header>
 
     <main class="contact-main">
         <div class="contact-container">
+            <h1 class="page-title">Contact Us</h1>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h2>Contact Information</h2>
                     
                     <div class="info-section">
                         <h3>School Address</h3>
-                        <p>123 Islamic Education Street</p>
-                        <p>Knowledge District</p>
-                        <p>Victoria Island, ST 12345</p>
+                        <p>10 Wole Ajeboriogbon Street</p>
+                        <p>Oremeji Junction</p>
+                        <p>Sabo</p>
                     </div>
 
                     <div class="info-section">
                         <h3>Phone & Email</h3>
-                        <p>Phone: +2348123755393</p>
-                        <p>Phone: +2348060244180</p>
+                        <p>Phone: <a href="tel:+2348123755393">+234 812 375 5393</a></p>
+                        <p>Phone: <a href="tel:+2348060244180">+234 806 024 4180</a></p>
                         <p>Email: <a href="mailto:1stkhilafahacademy@gmail.com">1stkhilafahacademy@gmail.com</a></p>
                     </div>
 
                     <div class="info-section">
                         <h3>Office Hours</h3>
-                        <p>Monday – Friday: 8:00 AM – 4:30 PM</p>
-                        <p>Saturday: 8:00 AM – 1:00 PM</p>
-                        <p>Sunday: Closed</p>
+                        <p>Monday – Friday: 7:30 AM – 2:00 PM</p>
+                        <p>Saturday – Sunday: Closed</p>
                     </div>
 
                     <div class="info-section">
                         <h3>Emergency Contact</h3>
-                        <p>24/7 Emergency Line: +2348080701960</p>
+                        <p>24/7 Emergency Line: <a href="tel:+2348080701960">+234 808 070 1960</a></p>
                     </div>
 
                     <div class="quick-actions">
@@ -63,13 +65,13 @@
                     <form action="#" method="POST" class="contact-form">
                         
                         <div class="form-row">
-                            <input type="text" name="name" placeholder="Your Name *" required>
-                            <input type="email" name="email" placeholder="Email Address *" required>
+                            <input type="text" name="name" placeholder="Your Name *" required aria-label="Your Name">
+                            <input type="email" name="email" placeholder="Email Address *" required aria-label="Email Address">
                         </div>
                         
-                        <input type="tel" name="phone" placeholder="Phone Number">
+                        <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number">
                         
-                        <select name="subject" required>
+                        <select name="subject" required aria-label="Select a topic">
                             <option value="" disabled selected>Select a topic *</option>
                             <option value="Admissions Inquiry">Admissions Inquiry</option>
                             <option value="School Tour Request">School Tour Request</option>
@@ -80,7 +82,7 @@
                             <option value="Other">Other</option>
                         </select>
 
-                        <textarea name="message" rows="5" placeholder="Please tell us how we can help you... *" required></textarea>
+                        <textarea name="message" rows="5" placeholder="Please tell us how we can help you... *" required aria-label="Your Message"></textarea>
 
                         <button type="submit" class="submit-button">SEND MESSAGE</button>
                     </form>
@@ -92,19 +94,26 @@
     <footer>
         <p>&copy; 2025 The First Khilafah School. All rights reserved.</p>
         <div class="footer-credit">
-    <p>
-        Developed by 
-        <a href="https://wa.me/2348030493780?text=Hello%20Veiled_Dev%2C%20I%20saw%20your%20work%20and%20I%20need%20a%20website" 
-           target="_blank" 
-           class="dev-link">
-           Veiled_Dev
-        </a>
-    </p>
-</div>
+            <p>
+                Developed by 
+                <a href="https://wa.me/2348030493780?text=Hello%20Veiled_Dev%2C%20I%20saw%20your%20work%20and%20I%20need%20a%20website" 
+                   target="_blank"
+                   rel="noopener noreferrer" 
+                   class="dev-link">
+                   Veiled_Dev
+                </a>
+            </p>
+        </div>
     </footer>
-<a href="https://wa.me/+2348080701960?text=Hello%2C%20I%27m%20interested%20in%20learning%20more%20about%201st%20Khilafah%20School" class="whatsapp-float" target="_blank">
-        <img src="whatsapp.png" alt="Chat with us on WhatsApp" class="whatsapp-icon">
+
+    <a href="https://wa.me/2348080701960?text=Hello%2C%20I%27m%20interested%20in%20learning%20more%20about%201st%20Khilafah%20School" 
+       class="whatsapp-float" 
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with us on WhatsApp">
+        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
     </a>
+
     <script src="script.js"></script>
 </body>
 </html>

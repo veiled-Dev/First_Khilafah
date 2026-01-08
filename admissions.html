@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for admission to The First Khilafah School - Submit your application online.">
     <title>Admissions Application - The First Khilafah School</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
@@ -10,14 +11,14 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="logo.jpg" alt="The First Khilafah School Logo" class="header-logo">
+                <img src="logo.jpeg" alt="The First Khilafah School Logo" class="header-logo">
             </a>
         </div>
         <nav id="main-nav">
             <a href="index.html">Home</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <button id="menu-toggle">Menu</button>
+        <button id="menu-toggle" aria-label="Toggle navigation menu">Menu</button>
     </header>
 
     <main class="admissions-main">
@@ -25,17 +26,17 @@
             <h1 class="page-title">Admissions Application</h1>
             <p class="tagline">Complete the form below to begin the application process.</p>
 
-            <form action="YOUR_FORM_SERVICE_ENDPOINT" method="POST" class="application-form">
+            <form action="#" method="POST" class="application-form">
                 
                 <fieldset>
                     <legend>Student Information</legend>
                     <div class="form-grid">
-                        <input type="text" name="student_first_name" placeholder="First Name *" required>
-                        <input type="text" name="student_last_name" placeholder="Last Name *" required>
+                        <input type="text" name="student_first_name" placeholder="First Name *" required aria-label="Student First Name">
+                        <input type="text" name="student_last_name" placeholder="Last Name *" required aria-label="Student Last Name">
                         
-                        <input type="date" name="student_dob" placeholder="Date of Birth *" required>
+                        <input type="date" name="student_dob" required aria-label="Student Date of Birth">
                         
-                        <select name="grade_applying_for" required>
+                        <select name="grade_applying_for" required aria-label="Grade Applying For">
                             <option value="" disabled selected>Applying for Grade *</option>
                             <option value="Foundation">Foundation</option>
                             <option value="Nursery">Nursery</option>
@@ -43,28 +44,28 @@
                             <option value="Grade2">Grade 2</option>
                             <option value="Grade3">Grade 3</option>
                             <option value="Grade4">Grade 4</option>
-                            </select>
+                        </select>
                         
-                        <input type="text" name="previous_school" placeholder="Previous School Name (if any)">
+                        <input type="text" name="previous_school" placeholder="Previous School Name (if any)" aria-label="Previous School Name">
                     </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Parent/Guardian Contact</legend>
                     <div class="form-grid">
-                        <input type="text" name="parent_name" placeholder="Full Name *" required>
-                        <input type="email" name="parent_email" placeholder="Email Address *" required>
+                        <input type="text" name="parent_name" placeholder="Full Name *" required aria-label="Parent Full Name">
+                        <input type="email" name="parent_email" placeholder="Email Address *" required aria-label="Parent Email Address">
                         
-                        <input type="tel" name="parent_phone" placeholder="Phone Number *" required>
-                        <input type="text" name="parent_relationship" placeholder="Relationship to Student *" required>
+                        <input type="tel" name="parent_phone" placeholder="Phone Number *" required aria-label="Parent Phone Number">
+                        <input type="text" name="parent_relationship" placeholder="Relationship to Student *" required aria-label="Relationship to Student">
                     </div>
                     
-                    <input type="text" name="address" placeholder="Residential Address *" required>
+                    <input type="text" name="address" placeholder="Residential Address *" required aria-label="Residential Address">
                 </fieldset>
 
                 <fieldset>
                     <legend>Additional Information</legend>
-                    <textarea name="questions" rows="4" placeholder="Please list any specific academic or medical notes we should be aware of."></textarea>
+                    <textarea name="questions" rows="4" placeholder="Please list any specific academic or medical notes we should be aware of." aria-label="Additional Notes"></textarea>
                 </fieldset>
                 
                 <button type="submit" class="submit-button apply-btn">SUBMIT APPLICATION</button>
@@ -75,7 +76,27 @@
 
     <footer>
         <p>&copy; 2025 The First Khilafah School. All rights reserved.</p>
+        <div class="footer-credit">
+            <p>
+                Developed by 
+                <a href="https://wa.me/2348030493780?text=Hello%20Veiled_Dev%2C%20I%20saw%20your%20work%20and%20I%20need%20a%20website" 
+                   target="_blank"
+                   rel="noopener noreferrer" 
+                   class="dev-link">
+                   Veiled_Dev
+                </a>
+            </p>
+        </div>
     </footer>
+
+    <a href="https://wa.me/2348080701960?text=Hello%2C%20I%27m%20interested%20in%20learning%20more%20about%201st%20Khilafah%20School" 
+       class="whatsapp-float" 
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with us on WhatsApp">
+        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>
