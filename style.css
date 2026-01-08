@@ -558,19 +558,20 @@ footer p {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     margin-top: 30px;
+    padding: 20px 0;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    height: 300px;
+    height: 350px;
     background-color: #ddd;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item img {
@@ -582,7 +583,8 @@ footer p {
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item:hover img {
@@ -594,9 +596,9 @@ footer p {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(26, 83, 40, 0.9));
+    background: linear-gradient(to top, rgba(26, 83, 40, 0.95), transparent);
     color: white;
-    padding: 20px 15px;
+    padding: 25px 15px;
     text-align: center;
     font-weight: bold;
     font-size: 1.1em;
@@ -614,6 +616,38 @@ footer p {
     padding: 50px;
     color: #666;
     font-size: 1.1em;
+}
+
+/* Large screens - 4 columns */
+@media (min-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+    
+    .gallery-item {
+        height: 300px;
+    }
+}
+
+/* Medium screens - 3 columns */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Tablet screens - 2 columns */
+@media (min-width: 600px) and (max-width: 899px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        height: 280px;
+    }
 }
 
 /* ==================================== */
