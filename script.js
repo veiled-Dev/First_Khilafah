@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const res = await fetch(
-                `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=galleryImage&include=1`
+                `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=galleryImage&include=2`
             );
             
             if (!res.ok) {
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await res.json();
+            console.log('Gallery data received:', data); // Debug log
             container.innerHTML = '';
 
             if (!data.items || data.items.length === 0) {
@@ -75,29 +76,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            let imageCount = 0;
+
             data.items.forEach(item => {
                 const title = item.fields.title || 'School Memory';
                 const images = item.fields.image;
 
+                console.log('Processing item:', title, 'Images:', images); // Debug log
+
                 const processImage = (imgAsset) => {
-                    const url = getImageUrl(imgAsset.sys.id, data.includes);
-                    if (url) {
-                        const galleryItem = document.createElement('div');
-                        galleryItem.className = 'gallery-item';
-                        galleryItem.innerHTML = `
-                            <img src="${url}" alt="${title}" loading="lazy">
-                            <div class="gallery-overlay">${title}</div>
-                        `;
-                        container.appendChild(galleryItem);
+                    // Handle both direct asset references and system references
+                    let assetId = null;
+                    
+                    if (imgAsset && imgAsset.sys && imgAsset.sys.id) {
+                        assetId = imgAsset.sys.id;
+                    }
+
+                    if (assetId) {
+                        const url = getImageUrl(assetId, data.includes);
+                        console.log('Image URL:', url); // Debug log
+                        
+                        if (url) {
+                            const galleryItem = document.createElement('div');
+                            galleryItem.className = 'gallery-item';
+                            galleryItem.innerHTML = `
+                                <img src="${url}" alt="${title}" loading="lazy">
+                                <div class="gallery-overlay">${title}</div>
+                            `;
+                            container.appendChild(galleryItem);
+                            imageCount++;
+                        }
                     }
                 };
 
+                // Check if images is an array (multiple images)
                 if (Array.isArray(images)) {
+                    console.log('Multiple images found:', images.length);
                     images.forEach(processImage);
-                } else if (images) {
+                } 
+                // Check if it's a single image object
+                else if (images && typeof images === 'object') {
+                    console.log('Single image found');
                     processImage(images);
                 }
             });
+
+            if (imageCount === 0) {
+                container.innerHTML = '<p class="loading-state">No images could be loaded. Please check your Contentful setup.</p>';
+            } else {
+                console.log(`Successfully loaded ${imageCount} images`);
+            }
+
         } catch (error) {
             console.error('Error fetching gallery:', error);
             container.innerHTML = '<p class="loading-state">Unable to load gallery. Please try again later.</p>';

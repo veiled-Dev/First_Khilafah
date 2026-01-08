@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apply for admission to The First Khilafah School - Submit your application online.">
-    <title>Admissions Application - The First Khilafah School</title>
+    <meta name="description" content="Apply for admission to The First Khilafah School - Learn about our admission process and policies.">
+    <title>Admissions - The First Khilafah School</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -16,6 +16,7 @@
         </div>
         <nav id="main-nav">
             <a href="index.html">Home</a>
+            <a href="about.html">Our Story</a>
             <a href="contact.html">Contact</a>
         </nav>
         <button id="menu-toggle" aria-label="Toggle navigation menu">Menu</button>
@@ -23,54 +24,123 @@
 
     <main class="admissions-main">
         <div class="admissions-container">
-            <h1 class="page-title">Admissions Application</h1>
-            <p class="tagline">Complete the form below to begin the application process.</p>
+            <h1 class="page-title">Admissions</h1>
+            <p class="tagline">Join our community of learners - Knowledge is Incumbent</p>
 
-            <form action="#" method="POST" class="application-form">
-                
-                <fieldset>
-                    <legend>Student Information</legend>
-                    <div class="form-grid">
-                        <input type="text" name="student_first_name" placeholder="First Name *" required aria-label="Student First Name">
-                        <input type="text" name="student_last_name" placeholder="Last Name *" required aria-label="Student Last Name">
-                        
-                        <input type="date" name="student_dob" required aria-label="Student Date of Birth">
-                        
-                        <select name="grade_applying_for" required aria-label="Grade Applying For">
-                            <option value="" disabled selected>Applying for Grade *</option>
-                            <option value="Foundation">Foundation</option>
-                            <option value="Nursery">Nursery</option>
-                            <option value="Grade1">Grade 1</option>
-                            <option value="Grade2">Grade 2</option>
-                            <option value="Grade3">Grade 3</option>
-                            <option value="Grade4">Grade 4</option>
-                        </select>
-                        
-                        <input type="text" name="previous_school" placeholder="Previous School Name (if any)" aria-label="Previous School Name">
-                    </div>
-                </fieldset>
+            <section class="admission-process-section">
+                <h2>Admission Process</h2>
+                <p>Our admission process is designed to ensure the best fit for your child and our school community. Here are the stages:</p>
 
-                <fieldset>
-                    <legend>Parent/Guardian Contact</legend>
-                    <div class="form-grid">
-                        <input type="text" name="parent_name" placeholder="Full Name *" required aria-label="Parent Full Name">
-                        <input type="email" name="parent_email" placeholder="Email Address *" required aria-label="Parent Email Address">
-                        
-                        <input type="tel" name="parent_phone" placeholder="Phone Number *" required aria-label="Parent Phone Number">
-                        <input type="text" name="parent_relationship" placeholder="Relationship to Student *" required aria-label="Relationship to Student">
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">Stage 1</div>
+                        <h3>Enquiry</h3>
+                        <p>Fill the form and learn about our policies. We will give you our policies, assessment criteria and profile both parents and learner.</p>
                     </div>
+
+                    <div class="process-step">
+                        <div class="step-number">Stage 2</div>
+                        <h3>Assessment</h3>
+                        <p>Entrance examination to profile the learner and understand their current level.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">Stage 3</div>
+                        <h3>Admission Offer</h3>
+                        <p>Receive your admission letter confirming your child's place at TFKS.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">Stage 4</div>
+                        <h3>Admission Pack</h3>
+                        <p>Pay at least 70% of fees and receive uniforms and stationery. Orientation for both pupil and parents.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">Final Stage</div>
+                        <h3>Resumption</h3>
+                        <p>Start classes and begin the exciting learning journey!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="policies-section">
+                <h2>School Policies</h2>
+
+                <div class="policy-card">
+                    <h3>Financial Policy</h3>
+                    <p>As we owe it to our dedicated staff to pay them on time for their excellent job, we need our pupils' parents to understand that:</p>
+                    <ul>
+                        <li>Prompt payment of fees aid implementation of plans</li>
+                        <li>You are encouraged to pay before resumption</li>
+                        <li>The standard payment is 80% on resumption and 20% before midterm tests</li>
+                        <li>Pupils whose parents cannot fulfill this obligation are to be kept at home. We would hate to send them back in these dangerous times, neither would we love to isolate them in school</li>
+                        <li>All educational items are to be purchased in school. Any unbranded items will be confiscated</li>
+                    </ul>
+                    <p><strong>If you do not find these agreeable, please discuss with the school before taking any action.</strong></p>
+                </div>
+
+                <div class="policy-card">
+                    <h3>Health Policy</h3>
+                    <p>To avoid drug mismanagement, we make it a practice not to administer drug to any sick pupil. The only exception is first aid treatment.</p>
+                    <ul>
+                        <li>If an injury is sustained or symptoms of something is noticed in school, parents will be quickly invited to pick up the concerned pupil</li>
+                        <li>If a child is sick, kindly allow them receive complete treatment at home before returning to school</li>
+                        <li>Be kind enough to inform the school if a child will not be coming in that day</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="application-section">
+                <h2>Application Form</h2>
+                <p>Complete the form below to begin the application process.</p>
+
+                <form action="#" method="POST" class="application-form">
                     
-                    <input type="text" name="address" placeholder="Residential Address *" required aria-label="Residential Address">
-                </fieldset>
+                    <fieldset>
+                        <legend>Student Information</legend>
+                        <div class="form-grid">
+                            <input type="text" name="student_first_name" placeholder="First Name *" required aria-label="Student First Name">
+                            <input type="text" name="student_last_name" placeholder="Last Name *" required aria-label="Student Last Name">
+                            
+                            <input type="date" name="student_dob" required aria-label="Student Date of Birth">
+                            
+                            <select name="grade_applying_for" required aria-label="Grade Applying For">
+                                <option value="" disabled selected>Applying for Grade *</option>
+                                <option value="Foundation">Foundation</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="Grade1">Grade 1</option>
+                                <option value="Grade2">Grade 2</option>
+                                <option value="Grade3">Grade 3</option>
+                                <option value="Grade4">Grade 4</option>
+                            </select>
+                            
+                            <input type="text" name="previous_school" placeholder="Previous School Name (if any)" aria-label="Previous School Name">
+                        </div>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Additional Information</legend>
-                    <textarea name="questions" rows="4" placeholder="Please list any specific academic or medical notes we should be aware of." aria-label="Additional Notes"></textarea>
-                </fieldset>
-                
-                <button type="submit" class="submit-button apply-btn">SUBMIT APPLICATION</button>
-                <p class="small-text">Submission of this form does not guarantee acceptance. The admissions team will contact you shortly to schedule an interview.</p>
-            </form>
+                    <fieldset>
+                        <legend>Parent/Guardian Contact</legend>
+                        <div class="form-grid">
+                            <input type="text" name="parent_name" placeholder="Full Name *" required aria-label="Parent Full Name">
+                            <input type="email" name="parent_email" placeholder="Email Address *" required aria-label="Parent Email Address">
+                            
+                            <input type="tel" name="parent_phone" placeholder="Phone Number *" required aria-label="Parent Phone Number">
+                            <input type="text" name="parent_relationship" placeholder="Relationship to Student *" required aria-label="Relationship to Student">
+                        </div>
+                        
+                        <input type="text" name="address" placeholder="Residential Address *" required aria-label="Residential Address">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        <textarea name="questions" rows="4" placeholder="Please list any specific academic or medical notes we should be aware of." aria-label="Additional Notes"></textarea>
+                    </fieldset>
+                    
+                    <button type="submit" class="submit-button apply-btn">SUBMIT APPLICATION</button>
+                    <p class="small-text">Submission of this form does not guarantee acceptance. The admissions team will contact you shortly to schedule an assessment.</p>
+                </form>
+            </section>
         </div>
     </main>
 
