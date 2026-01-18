@@ -11,7 +11,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="logo.jpg" alt="The First Khilafah School Logo" class="header-logo">
+                <img src="logo.jpeg" alt="The First Khilafah School Logo" class="header-logo">
             </a>
         </div>
         <nav id="main-nav">
@@ -26,10 +26,27 @@
         <h1 class="page-title">School Gallery</h1>
         <p class="tagline">Capturing moments of growth, learning, and faith.</p>
 
+        <!-- Category Filter Buttons -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-category="all">All Events</button>
+            <button class="filter-btn" data-category="sports">Sports Events</button>
+            <button class="filter-btn" data-category="academic">Academic Events</button>
+            <button class="filter-btn" data-category="graduation">Graduation</button>
+            <button class="filter-btn" data-category="islamic">Islamic Events</button>
+            <button class="filter-btn" data-category="endofyear">End of Year</button>
+            <button class="filter-btn" data-category="excursion">Excursions</button>
+            <button class="filter-btn" data-category="other">Other Events</button>
+        </div>
+
         <div id="gallery-container" class="gallery-grid">
             <div class="loading-state">
                 <p>Loading school memories...</p>
             </div>
+        </div>
+
+        <!-- Empty State Message -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <p>No images found in this category.</p>
         </div>
     </main>
 

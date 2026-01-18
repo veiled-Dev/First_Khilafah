@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .join('<br><br>');
     }
 
+    // --- Gallery Variables ---
+    let allGalleryItems = []; // Store all gallery items
+    let currentCategory = 'all'; // Track current filter
+
     // --- Fetch Gallery (Only runs on gallery.html) ---
     async function fetchGallery() {
         const container = document.getElementById('gallery-container');
@@ -68,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await res.json();
-            console.log('Gallery data received:', data); // Debug log
+            console.log('Gallery data received:', data);
+            
+            allGalleryItems = []; // Reset gallery items
             container.innerHTML = '';
 
             if (!data.items || data.items.length === 0) {
@@ -76,16 +82,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            let imageCount = 0;
-
+            // Process all items and store them
             data.items.forEach(item => {
                 const title = item.fields.title || 'School Memory';
+                const category = item.fields.category || 'other'; // Get category from Contentful
                 const images = item.fields.image;
 
-                console.log('Processing item:', title, 'Images:', images); // Debug log
+                console.log('Processing item:', title, 'Category:', category, 'Images:', images);
 
                 const processImage = (imgAsset) => {
-                    // Handle both direct asset references and system references
                     let assetId = null;
                     
                     if (imgAsset && imgAsset.sys && imgAsset.sys.id) {
@@ -94,43 +99,98 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (assetId) {
                         const url = getImageUrl(assetId, data.includes);
-                        console.log('Image URL:', url); // Debug log
                         
                         if (url) {
-                            const galleryItem = document.createElement('div');
-                            galleryItem.className = 'gallery-item';
-                            galleryItem.innerHTML = `
-                                <img src="${url}" alt="${title}" loading="lazy">
-                                <div class="gallery-overlay">${title}</div>
-                            `;
-                            container.appendChild(galleryItem);
-                            imageCount++;
+                            // Store the item data
+                            allGalleryItems.push({
+                                title: title,
+                                category: category.toLowerCase(),
+                                url: url
+                            });
                         }
                     }
                 };
 
-                // Check if images is an array (multiple images)
+                // Handle multiple or single images
                 if (Array.isArray(images)) {
                     console.log('Multiple images found:', images.length);
                     images.forEach(processImage);
-                } 
-                // Check if it's a single image object
-                else if (images && typeof images === 'object') {
+                } else if (images && typeof images === 'object') {
                     console.log('Single image found');
                     processImage(images);
                 }
             });
 
-            if (imageCount === 0) {
-                container.innerHTML = '<p class="loading-state">No images could be loaded. Please check your Contentful setup.</p>';
-            } else {
-                console.log(`Successfully loaded ${imageCount} images`);
-            }
+            console.log(`Total images loaded: ${allGalleryItems.length}`);
+            
+            // Display all images initially
+            displayGalleryItems('all');
+            
+            // Setup filter buttons
+            setupGalleryFilters();
 
         } catch (error) {
             console.error('Error fetching gallery:', error);
             container.innerHTML = '<p class="loading-state">Unable to load gallery. Please try again later.</p>';
         }
+    }
+
+    // --- Display Gallery Items Based on Category ---
+    function displayGalleryItems(category) {
+        const container = document.getElementById('gallery-container');
+        const emptyState = document.getElementById('empty-state');
+        
+        if (!container) return;
+
+        container.innerHTML = '';
+        currentCategory = category;
+
+        // Filter items based on category
+        const filteredItems = category === 'all' 
+            ? allGalleryItems 
+            : allGalleryItems.filter(item => item.category === category);
+
+        if (filteredItems.length === 0) {
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        emptyState.style.display = 'none';
+
+        // Display filtered items
+        filteredItems.forEach(item => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.setAttribute('data-category', item.category);
+            galleryItem.innerHTML = `
+                <img src="${item.url}" alt="${item.title}" loading="lazy">
+                <div class="gallery-overlay">${item.title}</div>
+            `;
+            container.appendChild(galleryItem);
+        });
+
+        console.log(`Displayed ${filteredItems.length} images for category: ${category}`);
+    }
+
+    // --- Setup Gallery Filter Buttons ---
+    function setupGalleryFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        if (filterButtons.length === 0) return;
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get category and filter
+                const category = this.getAttribute('data-category');
+                displayGalleryItems(category);
+            });
+        });
     }
 
     // --- Fetch News (Home Page Limited to 3) ---

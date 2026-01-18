@@ -555,6 +555,61 @@ footer p {
 /* 7. GALLERY PAGE STYLES */
 /* ==================================== */
 
+/* Gallery Filters */
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+    background-color: white;
+    color: #1A5328;
+    border: 2px solid #1A5328;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.filter-btn:hover {
+    background-color: #D1C752;
+    color: #1A5328;
+    border-color: #D1C752;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #1A5328;
+    color: white;
+    border-color: #1A5328;
+}
+
+.filter-btn:focus {
+    outline: 2px solid #D1C752;
+    outline-offset: 2px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 1.1em;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -572,6 +627,18 @@ footer p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .gallery-item img {
@@ -647,6 +714,15 @@ footer p {
     
     .gallery-item {
         height: 280px;
+    }
+    
+    .gallery-filters {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
 }
 
