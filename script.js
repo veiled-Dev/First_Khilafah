@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Process all items and store them
             data.items.forEach(item => {
-                const title = item.fields.title || 'School Memory';
+                const title = item.fields.title;
                 const category = item.fields.category || 'other'; // Get category from Contentful
                 const images = item.fields.image;
 
